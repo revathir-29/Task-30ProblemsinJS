@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Caeser Cipher</h2>
+    <p>Enter text to encrypt and decrypt:</p>
+    <input type="text" id="text">
+    <p>Enter shift value:</p>
+    <input type="number" id="shift"><br>
+    <button onclick="encrypt()">Encrypt</button><br>
+    <button onclick="decrypt()">Decrypt</button>
+    <p id="result"></p>
+    <script>
+        function caesercipher(str, shift){
+            return str.split(``).map(char =>{
+                if(char.match(/[a-z]/i)){
+                    const code=char.charCodeAt(0);
+                    let base=(code >=65 && code<=90)?65:97;
+                    return String.fromCharCode(((code-base+shift)%26)+base);
+                }
+                return char;
+            }).join('');
+        }
+        function encrypt(){
+            const text=document.getElementById('text').value;
+            const shift=parseInt(document.getElementById('shift').value,10);
+            const encryptedText=caesercipher(text, shift);
+            document.getElementById('result').textContent=`Encrypted Text : ${encryptedText}`;
+        }
+
+        function decrypt(){
+            const text=document.getElementById('text').value;
+            const shift=parseInt(document.getElementById('shift').value,10);
+            const decryptedText=caesercipher(text, shift);
+            document.getElementById('result').textContent=`Decrypted Text : ${decryptedText}`;
+        }
+    </script>
+    
+</body>
+</html>

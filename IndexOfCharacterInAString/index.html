@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Index of Character in a String</h2>
+    <label for="string">Enter the String :</label>
+    <input type="text" id="string" name="string" >
+        <br><br>
+    <label for="char">Enter the Character in a String:</label>
+    <input type="text" id="char" name="char" >
+        <br><br>
+    <input type="button" value="Check" onclick="indexofCharacter()">
+    <h4 id="result"></h4>
+
+    <script>
+        function indexofCharacter(){
+            let string=document.getElementById('string').value;
+            let char=document.getElementById('char').value;
+            if(char.length!==1){
+                document.getElementById('result').innerText="Enter a Single Character";
+                return;
+            }
+            let first=string.indexOf(char);
+            if(first!==-1){
+                document.getElementById('result').innerText="Index : "+first;
+            }
+            else{
+                document.getElementById('result').innerText="Character not found";
+            }
+
+
+        }
+    </script>
+    
+</body>
+</html>

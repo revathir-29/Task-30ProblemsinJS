@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+       <h1>Remove Duplicates from an Array</h1>
+    <label for="number">Enter a Numbers:</label>
+    <input type="text" id="number" name="number">
+        <br><br>
+        <input type="button" value="Remove" onclick="removeDuplicates()">
+        <h4 id="result"></h4>
+    
+       <script>
+        
+        function removeDuplicates(){
+            let number=document.getElementById('number').value;
+            let remove=[...new Set(number)];
+            let result=document.getElementById('result').innerText="Array without Duplicates : "+remove;
+        } 
+       </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Area of Triangle</h1>
+        <input type="text" id="base" placeholder="Enter the Base" ><br>
+        <input type="text" id="height" placeholder="Enter the Height"><br>
+        <button onclick="calculate()">Calculate</button>
+        <div class="result">
+        <p id="area"></p>
+    </div>
+
+
+        
+    <script>
+        function findArea(base, height){
+            return 1/2*base*height;
+        }
+        function calculate(){
+            var base=document.getElementById('base').value;
+            var height=document.getElementById('height').value;
+            var area=findArea(base, height);
+            document.getElementById('area').textContent="Area of Triangle : "+area;
+        }
+     
+    </script>
+     </body>
+</html>

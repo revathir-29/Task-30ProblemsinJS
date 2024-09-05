@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fibonacci</h1>
+    <label for="number">Enter the value</label>
+    <input type="number" id="number" name="number"><br>
+    <button onclick="fibonacciSeries()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function fibonacci(n){
+            if(n===0){
+                return 0;
+            }
+            else if(n===1){
+                return 1;
+            }
+            else{
+                return fibonacci(n-1)+fibonacci(n-2);
+            }
+        }
+        function getfibonacciSeries(n){
+            const sequence=[];
+            for(let i=0; i<=n; i++){
+                sequence.push(fibonacci(i));
+            }
+            return sequence;    
+        }
+        function fibonacciSeries(){
+            const num=document.getElementById('number').value;
+            if(num==="" || num<0){
+                document.getElementById('result').innerText="please enter a non-negative integer";
+            }
+            else{
+                const sequence=getfibonacciSeries(parseInt(num));
+                document.getElementById('result').innerText=`fibonacci sequence is : ${sequence.join(', ')}`;
+            }
+        }
+
+    </script>
+</body>
+</html>

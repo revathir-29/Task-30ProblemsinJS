@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Celsius to Fahrenheit</h1>
+        <label for="celsius">Temparature</label>
+        <input type="text" id="celsius"><br>
+        <input type="button" value="Enter" onclick="change()">
+        <h5 id="result"></h5>
+        <script>
+            function change(){
+                var celsius=document.getElementById("celsius").value;
+                var Fahrenheit=(9/5)*celsius+32;
+                document.getElementById("result").innerText="Fahrenheit :"+Fahrenheit;
+            }
+            
+        </script>
+        
+    </body>
+</html>

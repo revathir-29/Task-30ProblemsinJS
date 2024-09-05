@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Decimal to Binary or Hexadecimal</h1>
+    <input type="number" id="decimal" placeholder="Enter the number">
+    <button onclick="convertion()">Convert</button>
+    <p id="binaryAnswer"></p>
+    <p id="HexadecimalAnswer"></p>
+
+    <script>
+        function convertion(){
+            let decimal=parseInt(document.getElementById('decimal').value);
+            let binary=decimal.toString(2);
+            let hexadecimal=decimal.toString(16).toUpperCase();
+        
+        document.getElementById('binaryAnswer').textContent="Binary : "+binary;
+        document.getElementById('HexadecimalAnswer').textContent="Hexadecimal: "+hexadecimal;
+        }
+    </script>
+    
+</body>
+</html>

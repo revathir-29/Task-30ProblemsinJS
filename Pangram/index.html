@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Check String is pangram or not</h2>
+    <label for="str">Enter the String :</label>
+    <input type="text" id="letter" name="letter">
+        <br><br>
+        <input type="button" value="Check" onclick="checkpangram()">
+        <p id="result"></p>
+
+        <script>
+            function pangram(input){
+                input=input.toLowerCase();
+                let set=new Set();
+                for (let char of input){
+                    if(char >='a' && char<='z'){
+                        set.add(char);
+
+                    }
+                }
+                return set.size===26;
+                
+            }
+            function checkpangram(){
+                let letter=document.getElementById('letter').value;
+                let result=document.getElementById('result');
+                if(pangram(letter)){
+                    result.textContent="Pangram";
+                }
+                else{
+                    result.textContent="Not a Pangram";
+                }
+
+            }
+        </script>
+    
+</body>
+</html>

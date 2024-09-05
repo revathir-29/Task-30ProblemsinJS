@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Sum of All Even Numbers in an Array</h3>
+        <label for="number">Enter the numbers as comma separated value:</label>
+        <input type="text" id="number" placeholder="eg: 1,2,3,4,6">
+        <br><br>
+        <input type="button" value="Calculate" onclick="calculation()">
+        <h4 id="result"></h4>
+        <script>
+            function calculate(number){
+                
+                let sum=0;
+                for(let i=0;i<number.length;i++){
+                    if(number[i]%2===0){
+                        sum=sum+Number(number[i]);
+                    }
+                }
+                sum="Sum of all even numbers in an Array : "+sum;
+                return sum;
+
+            }
+            function calculation(){
+                let number=document.getElementById('number').value;
+                let result=document.getElementById('result');
+                result.textContent=calculate(number);
+            }
+                 
+            
+        </script>
+    
+</body>
+</html>

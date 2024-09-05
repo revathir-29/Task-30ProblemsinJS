@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Count the Occurance of Character in a String</h2>
+    <label for="str">Enter the Text :</label>
+    <input type="text" id="str" name="str" >
+        <br><br>
+        <input type="button" value="count" onclick="countCharacters()">
+        <pre id="result"></pre>
+        <script>
+            function countCharacters(){
+            let str=document.getElementById('str').value;
+            let count={};
+            for(let char of str){
+                if(count[char]){
+                    count[char]++;
+                }
+                else{
+                    count[char]=1;
+                }
+        }
+        answer(count);
+        }
+        function answer(count){
+            let result=document.getElementById('result');
+            result.textContent='';
+            for(let char in count){
+                let charcount=count[char];
+                let final=char===' '?'space':char;
+                result.innerHTML+=`<p>${final}: ${charcount}</p>`;
+            }
+
+        }
+
+        </script>
+    
+</body>
+</html>

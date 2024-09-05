@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Count the Number of Words in a String</h2>
+    <label for="str">Enter the Text :</label>
+    <input type="text" id="str" name="str" >
+        <br><br>
+        <input type="button" value="count" onclick="countWords()">
+        <h4 id="result"></h4>
+        <script>
+            function countWords(){
+                let words=document.getElementById('str').value;
+                let text=words.trim().split(/\s+/);
+                let count= text.length;
+                document.getElementById('result').innerText="Number of words : "+count;
+
+
+            }
+        </script>
+
+    
+</body>
+</html>

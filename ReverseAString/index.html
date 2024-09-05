@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Reverse a String</h2>
+    <label for="str">Enter the String :</label>
+    <input type="text" id="letter" name="letter">
+        <br><br>
+        <input type="button" value="Convert" onclick="reverseString()">
+        <p id="result"></p>
+        <script>
+            function reverseString(){
+                let letter=document.getElementById('letter').value;
+                let rev=letter.split('').reverse().join('');
+                let result=document.getElementById('result').innerHTML="Reverse String : "+rev;
+
+            }
+
+        </script>
+
+
+    
+</body>
+</html>

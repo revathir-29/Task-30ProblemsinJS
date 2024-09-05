@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Pyramid Pattern</h2>
+    <pre id="pyramid"></pre>
+    <script>
+        function printpyramid(rows){
+            let pyramid='';
+            for(let i=1;i<=rows;i++){
+                let line ='';
+                for(let j=1;j<=i;j++){
+                    line +="*";
+                }
+                pyramid += line + '\n';
+            }
+            return pyramid;
+        }
+        const rows=4;
+        document.getElementById('pyramid').innerHTML =printpyramid(rows);
+    </script>
+    
+</body>
+</html>
